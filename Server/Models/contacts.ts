@@ -13,7 +13,7 @@ const ContactSchema = new Schema({
 });
 
 //create model using the schema
-const Model = mongoose.model("Movies", ContactSchema);
+const Model = mongoose.model("contacts", ContactSchema);
 
 //export the model, this makes the file a module
 export default Model;

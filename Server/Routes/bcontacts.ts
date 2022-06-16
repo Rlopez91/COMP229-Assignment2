@@ -6,6 +6,6 @@ import { DisplayContactList } from '../Controllers/contact-list';
 import { AuthGuard } from '../Util';
 
 
-router.get('/movie-list', AuthGuard, DisplayContactList);
+router.get('/contact-list', AuthGuard, DisplayContactList);
 
 export default router;

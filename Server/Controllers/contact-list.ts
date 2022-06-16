@@ -1,11 +1,11 @@
 import express from 'express';
 
-import Movie from '../Models/movie';
+import Contact from '../Models/contacts';
 import { UserDisplayName } from '../Util';
 
 export function DisplayContactList(req: express.Request, res: express.Response, next: express.NextFunction)
 {
-    Movie.find(function(err, contactsCollection)
+    Contact.find(function(err, contactsCollection)
     {
         if(err)
         {
