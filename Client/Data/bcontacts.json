@@ -1,0 +1,34 @@
+{
+    "bcontacts":[
+        {
+            "Name": "Andres Tuiran",
+            "Number": "123456789",
+            "Email": "andres@example.com"
+            
+        },
+
+        {
+            "Name": "Ricardo Lopez",
+            "Number": "987654321",
+            "Email": "ricardo@example.com"
+        },
+
+        {
+            "Name": "Kushal Bhardwaj",
+            "Number": "159357654",
+            "Email": "kushal@example.com"
+        },
+
+        {
+            "Name": "Rosa Meltrozo",
+            "Number": "357951852",
+            "Email": "rosa@example.com"
+        },
+
+        {
+            "Name": "Monica Galindo",
+            "Number": "357951654",
+            "Email": "monica@example.com"
+        }
+    ]
+}
