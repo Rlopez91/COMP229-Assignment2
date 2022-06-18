@@ -8,5 +8,6 @@ const router = express_1.default.Router();
 const contact_list_1 = require("../Controllers/contact-list");
 const Util_1 = require("../Util");
 router.get('/contact-list', Util_1.AuthGuard, contact_list_1.DisplayContactList);
+router.get('/update', contact_list_1.DisplayUpdateContact);
 exports.default = router;
 //# sourceMappingURL=bcontacts.js.map
