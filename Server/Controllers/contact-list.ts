@@ -3,7 +3,7 @@ import express from 'express';
 import Contact from '../Models/contacts';
 import { UserDisplayName } from '../Util';
 
-export function DisplayContactList(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayContactList(req: express.Request, res: express.Response, next: express.NextFunction): void
 {
     Contact.find(function(err, contactsCollection)
     {
@@ -17,30 +17,33 @@ export function DisplayContactList(req: express.Request, res: express.Response, 
 }
 
 // Get route for displaying the update contact page
-export function DisplayUpdateContact(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayUpdatePage(req: express.Request, res: express.Response, next: express.NextFunction): void
 {    
     res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
         
 }
 
-//process Update contact page
-export function ProcessUpdatePage(req: express.Request, res: express.Response, next: express.NextFunction)
+export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction): void
 {    
-    let newContact = new Contact({
-        "Name": req.body.Name,
-        "Number": req.body.Number,
-        "Email": req.body.Email
-    });
+    //res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
+        
+}
 
-    Contact.create(newContact, (err, Contact) =>{
-        if(err){
-            console.log(err);
-            res.end(err);
-        }
-        else{
-            res.redirect('/contact-list');
-        }
-    })
+export function ProcessUpdatePage(req: express.Request, res: express.Response, next: express.NextFunction): void
+{    
+    //res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
+        
+}
+
+export function ProcessAddPage(req: express.Request, res: express.Response, next: express.NextFunction): void
+{    
+    //res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
+        
+}
+
+export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction): void
+{    
+    //res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
         
 }
 
