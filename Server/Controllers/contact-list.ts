@@ -14,7 +14,7 @@ export function DisplayContactList(req: express.Request, res: express.Response, 
             res.end(err);
         }
         res.render('index', {title: 'Business Contact List', page: 'contact-list', bcontacts: contactsCollection, displayName: UserDisplayName(req)});
-    });
+    }).sort({Name:1});
 }
 
 // Get route for displaying the update contact page

@@ -13,7 +13,7 @@ function DisplayContactList(req, res, next) {
             res.end(err);
         }
         res.render('index', { title: 'Business Contact List', page: 'contact-list', bcontacts: contactsCollection, displayName: (0, Util_1.UserDisplayName)(req) });
-    });
+    }).sort({ Name: 1 });
 }
 exports.DisplayContactList = DisplayContactList;
 function DisplayUpdatePage(req, res, next) {
