@@ -1,4 +1,5 @@
 import express from 'express';
+import { CallbackError } from 'mongoose';
 
 import Contact from '../Models/contacts';
 import { UserDisplayName } from '../Util';
@@ -79,7 +80,17 @@ export function ProcessAddPage(req: express.Request, res: express.Response, next
 
 export function ProcessDeletePage(req: express.Request, res: express.Response, next: express.NextFunction): void
 {    
-    //res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
-        
+    let id = req.params.id;
+    
+    //pass the id to the database and delete the contact
+    Contact.remove({_id: id}, function(err: CallbackError){
+        if(err){
+            console.error(err);
+            res.end(err);
+        }
+
+        //delete successful
+        res.redirect('/contact-list');
+    })
 }
 

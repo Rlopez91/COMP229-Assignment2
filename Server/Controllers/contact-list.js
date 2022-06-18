@@ -64,6 +64,14 @@ function ProcessAddPage(req, res, next) {
 }
 exports.ProcessAddPage = ProcessAddPage;
 function ProcessDeletePage(req, res, next) {
+    let id = req.params.id;
+    contacts_1.default.remove({ _id: id }, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/contact-list');
+    });
 }
 exports.ProcessDeletePage = ProcessDeletePage;
 //# sourceMappingURL=contact-list.js.map
