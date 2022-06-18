@@ -15,11 +15,11 @@ router.get('/add', AuthGuard, DisplayAddPage);
 router.get('/update/:id', AuthGuard, DisplayUpdatePage);
 
 //process add page
-router.post('/add', AuthGuard, ProcessAddPage)
+router.post('/add', AuthGuard, ProcessAddPage);
 
 //process update page
 router.post('/update/:id', AuthGuard, ProcessUpdatePage);
 
 //process delete page
-router.post("/delete/:id", AuthGuard, ProcessDeletePage);
+router.get("/delete/:id", AuthGuard, ProcessDeletePage);
 export default router;

@@ -12,6 +12,6 @@ router.get('/add', Util_1.AuthGuard, contact_list_1.DisplayAddPage);
 router.get('/update/:id', Util_1.AuthGuard, contact_list_1.DisplayUpdatePage);
 router.post('/add', Util_1.AuthGuard, contact_list_1.ProcessAddPage);
 router.post('/update/:id', Util_1.AuthGuard, contact_list_1.ProcessUpdatePage);
-router.post("/delete/:id", Util_1.AuthGuard, contact_list_1.ProcessDeletePage);
+router.get("/delete/:id", Util_1.AuthGuard, contact_list_1.ProcessDeletePage);
 exports.default = router;
 //# sourceMappingURL=bcontacts.js.map

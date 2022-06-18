@@ -5,6 +5,7 @@
         $("a.delete").on("click", function (event) {
             if (!confirm("Are you sure?")) {
                 event.preventDefault();
+                console.log("working");
                 location.href = "/contact-list";
             }
         });
