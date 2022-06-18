@@ -19,7 +19,14 @@ export function DisplayContactList(req: express.Request, res: express.Response, 
 // Get route for displaying the update contact page
 export function DisplayUpdatePage(req: express.Request, res: express.Response, next: express.NextFunction): void
 {    
-    res.render('index', {title: 'Update', page: 'update', bcontacts: '', displayName: UserDisplayName(req)});
+    let id = req.params.id;
+    Contact.findById(id, {},{}, function(err, contactToEdit){
+        if(err){
+            console.error(err);
+            res.end(err);
+        }
+        res.render('index', {title: 'Update', page: 'update', bcontacts: contactToEdit, displayName: UserDisplayName(req)});
+    })   
         
 }
 

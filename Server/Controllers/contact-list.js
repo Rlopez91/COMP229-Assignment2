@@ -17,7 +17,14 @@ function DisplayContactList(req, res, next) {
 }
 exports.DisplayContactList = DisplayContactList;
 function DisplayUpdatePage(req, res, next) {
-    res.render('index', { title: 'Update', page: 'update', bcontacts: '', displayName: (0, Util_1.UserDisplayName)(req) });
+    let id = req.params.id;
+    contacts_1.default.findById(id, {}, {}, function (err, contactToEdit) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.render('index', { title: 'Update', page: 'update', bcontacts: contactToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
+    });
 }
 exports.DisplayUpdatePage = DisplayUpdatePage;
 function DisplayAddPage(req, res, next) {
