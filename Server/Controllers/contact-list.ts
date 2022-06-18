@@ -19,13 +19,13 @@ export function DisplayContactList(req: express.Request, res: express.Response, 
 // Get route for displaying the update contact page
 export function DisplayUpdatePage(req: express.Request, res: express.Response, next: express.NextFunction): void
 {    
-    res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Update', page: 'update', bcontacts: '', displayName: UserDisplayName(req)});
         
 }
 
 export function DisplayAddPage(req: express.Request, res: express.Response, next: express.NextFunction): void
 {    
-    //res.render('index', {title: 'Update Contact', page: 'update', displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Add', page: 'update', bcontacts: '', displayName: UserDisplayName(req)});
         
 }
 

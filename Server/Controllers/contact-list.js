@@ -17,10 +17,11 @@ function DisplayContactList(req, res, next) {
 }
 exports.DisplayContactList = DisplayContactList;
 function DisplayUpdatePage(req, res, next) {
-    res.render('index', { title: 'Update Contact', page: 'update', displayName: (0, Util_1.UserDisplayName)(req) });
+    res.render('index', { title: 'Update', page: 'update', bcontacts: '', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayUpdatePage = DisplayUpdatePage;
 function DisplayAddPage(req, res, next) {
+    res.render('index', { title: 'Add', page: 'update', bcontacts: '', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayAddPage = DisplayAddPage;
 function ProcessUpdatePage(req, res, next) {
