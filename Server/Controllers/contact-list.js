@@ -32,9 +32,35 @@ function DisplayAddPage(req, res, next) {
 }
 exports.DisplayAddPage = DisplayAddPage;
 function ProcessUpdatePage(req, res, next) {
+    let id = req.params.id;
+    let updateContact = new contacts_1.default({
+        "_id": id,
+        "Name": req.body.contactName,
+        "Number": req.body.contactNumber,
+        "Email": req.body.contactEmail,
+    });
+    contacts_1.default.updateOne({ _id: id }, updateContact, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/contact-list');
+    });
 }
 exports.ProcessUpdatePage = ProcessUpdatePage;
 function ProcessAddPage(req, res, next) {
+    let newContact = new contacts_1.default({
+        "Name": req.body.contactName,
+        "Number": req.body.contactNumber,
+        "Email": req.body.contactEmail
+    });
+    contacts_1.default.create(newContact, function (err) {
+        if (err) {
+            console.error(err);
+            res.end(err);
+        }
+        res.redirect('/contact-list');
+    });
 }
 exports.ProcessAddPage = ProcessAddPage;
 function ProcessDeletePage(req, res, next) {
